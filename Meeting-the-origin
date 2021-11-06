@@ -1,0 +1,37 @@
+'''
+# Sample code to perform I/O:
+
+name = input()                  # Reading input from STDIN
+print('Hi, %s.' % name)         # Writing output to STDOUT
+
+# Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+
+Meeting the origin
+'''
+
+loop_counter = int(input())
+for i in range(0,loop_counter):
+    testString = input()
+    totalMoves = 0
+    l_ctr = 0
+    u_ctr = 0
+    for x in testString:
+        if x == "L":
+            l_ctr = l_ctr+1
+        elif x == "R":
+            l_ctr = l_ctr-1
+        elif x == "U":
+            u_ctr = u_ctr+1
+        elif x == "D":
+            u_ctr = u_ctr-1
+    l_ctr = abs(l_ctr)
+    u_ctr = abs(u_ctr)
+    if l_ctr %2 == 0:
+        totalMoves += int(l_ctr/2)
+    else:
+        totalMoves += int((l_ctr-1)/2+1)
+    if u_ctr %2 ==0:
+        totalMoves += int(u_ctr/2)
+    else:
+        totalMoves += int((u_ctr-1)/2+1)
+    print(str(totalMoves))
